@@ -16,7 +16,7 @@ class LinkedList{
         
     }
 
-    Add(element){
+    Append(element){
         let newNode = new Node(element)
         let currentNode = this.head
         if  (currentNode === null){
@@ -29,9 +29,7 @@ class LinkedList{
 
     
   currentNode.next = newNode
-
-            
-        
+    
 }
 
     PrintNodes(){
@@ -72,9 +70,9 @@ return 'Head is: ' +  this.head.value
 
 const linked = new LinkedList()
 
-linked.Add(34)
-linked.Add(45)
-linked.Add(48)
+linked.Append(34)
+linked.Append(45)
+linked.Append(48)
 
 
 linked.PrintNodes()
