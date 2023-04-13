@@ -37,8 +37,10 @@ class LinkedList{
     PrintNodes(){
 
         let currentNode = this.head
+        let index = 0
         while(currentNode !== null){
-            console.log(currentNode.value)
+            index++
+            console.log("Index is: " + index + ' Value is: ' + currentNode.value)
             currentNode = currentNode.next
         
             
@@ -48,9 +50,20 @@ class LinkedList{
     }
 
 
-     Head(){
-        console.log(this.head.value)
-return this.head.value
+     PrintHead(){
+        console.log('Head is: ' + this.head.value)
+return 'Head is: ' +  this.head.value
+    }
+
+    PrintTail(){
+
+        let currentNode= this.head
+        while(currentNode.next !== null){
+            currentNode = currentNode.next
+        }
+        console.log('Tail is: ' + currentNode.value)
+        return 'Tail is: ' + currentNode.value
+        
     }
 
 
@@ -65,8 +78,9 @@ linked.Add(48)
 
 
 linked.PrintNodes()
+linked.PrintTail()
 para = document.querySelector('.para')
-para.textContent = linked.Head()
+para.textContent = linked.PrintHead()
 
 
 //para.textContent = linked.PrintNodes()
