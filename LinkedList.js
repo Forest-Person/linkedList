@@ -16,7 +16,8 @@ class LinkedList{
         
     }
 
-    Append(element){
+    Append(element){//Add new node to end of list
+
         let newNode = new Node(element)
         let currentNode = this.head
         if  (currentNode === null){
@@ -32,6 +33,19 @@ class LinkedList{
     
 }
 
+    Prepend(element){ //Add new node to front of list
+
+        let newNode = new Node(element)
+
+        newNode.next = this.head
+
+        this.head = newNode
+
+
+    }
+
+    
+    
     PrintNodes(){
 
         let currentNode = this.head
@@ -73,6 +87,8 @@ const linked = new LinkedList()
 linked.Append(34)
 linked.Append(45)
 linked.Append(48)
+linked.Prepend(32)
+linked.Prepend(77777)
 
 
 linked.PrintNodes()
