@@ -84,6 +84,20 @@ class LinkedList{
         return count
     }
 
+    RemoveFirst(){
+        let valuePopped = structuredClone(this.head.value)
+        
+       
+        let secondNode = this.head.next
+        this.head = secondNode
+        console.log(valuePopped)
+        return valuePopped
+
+        
+            
+        
+    }
+
     
     
     PrintNodes(){
@@ -128,17 +142,18 @@ return 'Head is: ' +  this.head.value
 const linked = new LinkedList()
 
 linked.Append(34)
+
 linked.Append(45)
 linked.Append(48)
-linked.Prepend(32)
-linked.Prepend(77777)
-linked.InsertAt(3,234)
-
+linked.Append(55)
+linked.Append(22)
 linked.PrintNodes()
-linked.PrintTail()
-para = document.querySelector('.para')
-para.textContent = linked.Size()
 
+
+
+para = document.querySelector('.para')
+para.textContent = linked.RemoveFirst(34)
+linked.PrintNodes()
 
 //para.textContent = linked.PrintNodes()
 /*
