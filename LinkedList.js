@@ -72,6 +72,18 @@ class LinkedList{
 
     }
 
+    Size(){
+
+        let currentNode = this.head
+        let count = 0
+        while(currentNode!==null){
+         currentNode = currentNode.next   
+        console.log(count); 
+        count++}
+        
+        return count
+    }
+
     
     
     PrintNodes(){
@@ -110,6 +122,9 @@ return 'Head is: ' +  this.head.value
 }
 
 
+
+
+
 const linked = new LinkedList()
 
 linked.Append(34)
@@ -122,7 +137,7 @@ linked.InsertAt(3,234)
 linked.PrintNodes()
 linked.PrintTail()
 para = document.querySelector('.para')
-para.textContent = linked.PrintHead()
+para.textContent = linked.Size()
 
 
 //para.textContent = linked.PrintNodes()
