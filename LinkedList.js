@@ -44,6 +44,34 @@ class LinkedList{
 
     }
 
+    InsertAt(index,element){
+
+        let newNode = new Node(element)
+
+        let currentNode = this.head
+        if(index === 0){
+
+           
+            newNode.next = this.head
+            this.head = newNode
+        }
+
+        while(--index) {
+
+            if(currentNode.next !== null) {
+
+                currentNode = currentNode.next
+            }
+            else {
+
+            throw Error("Index Out of Bound");}
+        }
+       let oldValue = currentNode.next
+        currentNode.next = newNode
+        newNode.next = oldValue
+
+    }
+
     
     
     PrintNodes(){
@@ -89,7 +117,7 @@ linked.Append(45)
 linked.Append(48)
 linked.Prepend(32)
 linked.Prepend(77777)
-
+linked.InsertAt(3,234)
 
 linked.PrintNodes()
 linked.PrintTail()
