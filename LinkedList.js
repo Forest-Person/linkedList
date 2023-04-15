@@ -163,7 +163,26 @@ return 'Head is: ' +  this.head.value
     }
 
 
+
+
+    Contains(element) {
+
+    let currentNode = this.head
+
+    while(currentNode){
+
+        currentNode = currentNode.next
+        if(currentNode === element){
+            return `Element ${element} exists in the list.`
+        }
+    }
+
+
+    }
+
 }
+
+
 
 
 
@@ -182,7 +201,7 @@ linked.PrintNodes()
 
 
 para = document.querySelector('.para')
-para.textContent = linked.RemoveLast()
+para.textContent = linked.Contains(22)
 linked.PrintNodes()
 
 //para.textContent = linked.PrintNodes()
