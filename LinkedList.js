@@ -85,6 +85,9 @@ class LinkedList{
     }
 
     RemoveFirst(){
+        
+        if(this.head === null){return}
+        
         let valuePopped = structuredClone(this.head.value)
         
        
@@ -96,6 +99,33 @@ class LinkedList{
         
             
         
+    }
+
+    RemoveLast(){
+        
+        if(this.head === null){return}
+        if(this.head.next === null){
+            let poppedValue = structuredClone(this.head)
+            this.head = null
+            return console.log(poppedValue)
+        }
+
+        let firstNode = this.head
+        let secondNode = firstNode.next
+
+        while(secondNode.next !== null){
+
+            firstNode = firstNode.next
+            secondNode = firstNode.next
+
+
+        }
+        let removedValue = structuredClone(secondNode.value)
+        firstNode.next = null
+        return removedValue
+       
+
+
     }
 
     
@@ -152,7 +182,7 @@ linked.PrintNodes()
 
 
 para = document.querySelector('.para')
-para.textContent = linked.RemoveFirst(34)
+para.textContent = linked.RemoveLast()
 linked.PrintNodes()
 
 //para.textContent = linked.PrintNodes()
