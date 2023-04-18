@@ -1,3 +1,5 @@
+//Ke takeaway fomr this lesson is that you must use pointers, variable that represent values at certain postions in the linked list. previous values current values and post current values all need updated on every loop that the current while loop iteration is inside of so to speak.
+
 class Node{
 
     constructor(value){
@@ -216,7 +218,7 @@ DeleteNode(element){
     
         return `First node value ${deletedNode} was deleted.`
 }
-    while(currentNode !== null || currentNode.next !== null){
+    while(currentNode !== null ){
         currentNode = currentNode.next
         firstNode = firstNode.next
         
@@ -249,7 +251,7 @@ linked.PrintNodes()
 
 
 para = document.querySelector('.para')
-para.textContent = linked.DeleteNode(24)
+para.textContent = linked.DeleteNode(55)
 linked.PrintNodes()
 
 //para.textContent = linked.PrintNodes()
