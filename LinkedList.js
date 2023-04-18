@@ -72,6 +72,8 @@ class LinkedList{
 
     }
 
+    
+
     Size(){
 
         let currentNode = this.head
@@ -96,8 +98,6 @@ class LinkedList{
         console.log(valuePopped)
         return valuePopped
 
-        
-            
         
     }
 
@@ -127,6 +127,8 @@ class LinkedList{
 
 
     }
+
+
 
     
     
@@ -168,29 +170,75 @@ return 'Head is: ' +  this.head.value
     Contains(element) {
 
     let currentNode = this.head
-
+    let found 
+    let notFound 
     while(currentNode){
+       
+        
+        if(currentNode.value === element){
+            found = true
+        }else{notFound = false}
+        
 
         currentNode = currentNode.next
-        if(currentNode === element){
-            return `Element ${element} exists in the list.`
+        
+        }
+    
+        if(found){return `Element ${element} is in list`}else{return 'Not found'}
+    }
+
+
+Find(element) {
+
+    let currentNode = this.head
+    let count = 0
+    let notFound
+    while(currentNode){
+        if(currentNode.value === element){return `Element ${element} is at index ${count} .`}
+        
+        count++
+        currentNode = currentNode.next
+
+    }
+    if(notFound = true){return `Element ${element} was not found in linked list.`}
+}
+
+DeleteNode(element){
+
+    let firstNode = this.head
+    
+    let currentNode = this.head.next
+    let deletedNode
+    if(firstNode.value === element){
+       deletedNode = firstNode.value
+        
+        this.head = currentNode
+    
+        return `First node value ${deletedNode} was deleted.`
+}
+    while(currentNode !== null || currentNode.next !== null){
+        currentNode = currentNode.next
+        firstNode = firstNode.next
+        
+        if(currentNode.value === element){
+            
+            deletedNode = currentNode.value
+            firstNode.next = currentNode.next
+            
+            
+            return `Node of value ${deletedNode} was deleted.`
         }
     }
 
-
-    }
-
+    
 }
 
 
-
-
-
-
+}
 
 const linked = new LinkedList()
 
-linked.Append(34)
+linked.Append(24)
 
 linked.Append(45)
 linked.Append(48)
@@ -201,7 +249,7 @@ linked.PrintNodes()
 
 
 para = document.querySelector('.para')
-para.textContent = linked.Contains(22)
+para.textContent = linked.DeleteNode(24)
 linked.PrintNodes()
 
 //para.textContent = linked.PrintNodes()
